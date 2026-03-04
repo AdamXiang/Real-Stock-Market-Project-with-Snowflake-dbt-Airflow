@@ -1,0 +1,67 @@
+# ==========================================
+# 1. 憑證與機密變數 (Secrets & Credentials)
+# ==========================================
+# 包含 Snowflake, MinIO, Kafka 等服務的連線密碼與金鑰
+.env
+*.pem
+*.key
+credentials.json
+# dbt 的設定檔通常包含 Snowflake 密碼，若放在專案目錄內務必 ignore
+profiles.yml
+
+# ==========================================
+# 2. Python & uv (套件管理)
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+# uv 建立的虛擬環境資料夾
+.venv/
+# ⚠️ 注意：千萬不要 ignore `uv.lock` 或 `pyproject.toml`，它們必須被 commit 以確保環境重現性。
+
+# ==========================================
+# 3. dbt (Data Build Tool)
+# ==========================================
+# 編譯後的 SQL 與執行結果
+target/
+# dbt 下載的外部套件
+dbt_packages/
+# 執行日誌
+logs/
+# dbt docs 產生的靜態網站暫存
+edr_target/
+
+# ==========================================
+# 4. 本地端資料與基礎設施 (Kafka, MinIO, Airflow)
+# ==========================================
+# 如果你的 docker-compose.yml 有將 Volume 掛載到本地資料夾，請將名稱加在這裡
+postgres_data/
+minio_data/
+kafka_data/
+zookeeper_data/
+# 本地測試下載或產生的資料檔
+*.csv
+*.json
+*.parquet
+*.jsonl
+
+# ==========================================
+# 5. PyCharm (JetBrains IDE)
+# ==========================================
+.idea/
+*.iml
+# PyCharm 的 Jupyter Notebook 檢查點
+.ipynb_checkpoints/
+
+# ==========================================
+# 6. 作業系統暫存檔 (OS Generated)
+# ==========================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
