@@ -1,0 +1,51 @@
+# ==========================================
+# 1. Secrets & Credentials
+# ==========================================
+.env
+.env.*
+*.pem
+*.key
+credentials.json
+profiles.yml
+
+# ==========================================
+# 2. Python & uv
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+.venv/
+
+# ==========================================
+# 3. dbt (Data Build Tool)
+# ==========================================
+target/
+dbt_packages/
+logs/
+edr_target/
+
+
+postgres_data/
+minio_data/
+kafka_data/
+zookeeper_data/
+*.csv
+*.json
+*.parquet
+*.jsonl
+
+
+.idea/
+*.iml
+.ipynb_checkpoints/
+
+
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
